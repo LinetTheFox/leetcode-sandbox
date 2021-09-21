@@ -1,15 +1,12 @@
-// Worked as well? TODO: may be a better solution since it's sorted tho
 int removeDuplicates(int* nums, int numsSize) {
-    for (int i = 0; i < numsSize - 1;) {
-        if (nums[i] == nums[i + 1]) {
-            for (int j = i + 1; j < numsSize - 1; j++) {
-                nums[j] = nums[j + 1];
-            }
-            numsSize--;
-        } else {
-            i++;
+    if (numsSize == 0) return 0;
+    int next_pos = 1;
+    for (int i = 1; i < numsSize; ++i) {
+        if (nums[i] != nums[next_pos - 1]) {
+            nums[next_pos] = nums[i];
+            next_pos++;
         }
     }
-    return numsSize;
+    return next_pos;
 }
 
