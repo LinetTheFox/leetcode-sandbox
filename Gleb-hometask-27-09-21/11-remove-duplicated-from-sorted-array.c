@@ -1,12 +1,14 @@
+// I kinda did remove the if from top, but I effectively moved
+// it to return instead of beginning :^)
+// Ik it's probably not what was meant, but dunno how else we
+// can do it without skipping the first element
 int removeDuplicates(int* nums, int numsSize) {
-    if (numsSize == 0) return 0;
     int next_pos = 1;
-    for (int i = 1; i < numsSize; ++i) {
+    for (int i = 0; i < numsSize; ++i) {
         if (nums[i] != nums[next_pos - 1]) {
-            nums[next_pos] = nums[i];
-            next_pos++;
+            nums[next_pos++] = nums[i];
         }
     }
-    return next_pos;
+    return numsSize ? next_pos : 0;
 }
 
