@@ -19,7 +19,7 @@ int dominantIndex(int* nums, int numsSize) {
         }
     }
     
-    // Edge cases to prevent further getting of nums[-1]
+    // Edge cases
     if (firstI == -1) return -1;
     if (secondI == -1) return 0;
     
